@@ -1,0 +1,33 @@
+<form action="" method="get" [formGroup]='userForm'>
+  <h4>User form</h4>
+
+  <small *ngIf="userForm.get('firstName')?.touched && userForm.get('firstName')?.invalid" >First Name is invalid</small>
+  <input type="text" placeholder="First Name" formControlName='firstName'>
+
+  <small *ngIf="userForm.get('lastName')?.touched && userForm.get('lastName')?.invalid" >Last Name is invalid</small>
+
+  <input type="text" placeholder="Last Name" formControlName='lastName'>
+
+  <small *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid" >Email is invalid</small>
+  <input type="email" placeholder=" Email" formControlName="email">
+
+  <small *ngIf="userForm.get('phoneNumber')?.touched && userForm.get('phoneNumber')?.invalid" >phone Number is invalid</small>
+  <input type="tel" placeholder="mobile Number" formControlName="phoneNumber">
+
+  <p>Monthly Advertising Budget</p>
+
+  <select name="" id="" formControlName="monthlyAdvertBudget">
+
+    <option value="93993">93939</option>
+
+  </select>
+
+  <input type="submit" value="Submit"  class="button" (click)="submit()" >
+</form>
+
+
+<h3>
+  <a routerLink="/newpage" title="Click to view the ui design" class="nav" > page design</a>
+  <a routerLink="/" class="nav"> Go to home page</a>
+</h3>
+

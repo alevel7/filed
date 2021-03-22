@@ -1,0 +1,148 @@
+<div class="logo"><img src="../assets/img/filed-logo-01.png" alt=""></div>
+<div class="container first-container">
+  <div class="top">
+    <h2 class="title">
+      Book a Demo and get two weeks for <span>free</span> Why?
+    </h2>
+
+    <p>Because Our AI-Powered Software Will Exceed Your Marketing Goals.</p>
+    <article class="screenshot">
+
+    </article>
+  </div>
+  <form action="" class="form-register">
+    <!-- form one -->
+    <section *ngIf="!toggle" >
+      <h3 class="mobile-form-title">fill out the form and we will get in touch soon</h3>
+      <h3 class="desktop-form-title">Let's Start</h3>
+      <small>Fill out the form and we will get in touch to get you trial set up</small>
+      <p>Do you want to make ads that convert?</p>
+      <article class="radio">
+
+        <label for="yes" class="radio-label">
+          <input type="radio" name="ads" id="yes">
+          <span>Yes</span>
+        </label>
+
+        <label for="no" class="radio-label">
+          <input type="radio" name="ads" id="no">
+          <span>No</span>
+        </label>
+      </article>
+
+      <p>What's your monthly ad budget</p>
+      <select name="" id="">
+        <option value="">...</option>
+      </select>
+
+      <input type="button" value="GET STARTED" (click)="toggleForm()" class="submit-button" style="background-color: #FF6E4E; color:white">
+    </section>
+
+    <!-- form two -->
+    <article *ngIf="toggle" >
+      <section>
+        <h3 class="mobile-form-title">fill out details</h3>
+        <h3 class="desktop-form-title">We'll be in touch to get your trial setup</h3>
+        <small>Fill out form</small>
+      </section>
+
+      <div>
+        <input type="text" placeholder="First Name *">
+        <input type="text" placeholder="Last Name">
+      </div>
+      <input type="text" placeholder="Company Name *">
+      <input type="text" placeholder="Email *">
+      <!-- <input type="text" placeholder="Monthly Advertising Budget *"> -->
+      <select name="" id="">
+        <option value="1">Monthly Advertising Budget *</option>
+      </select>
+      <input type="text">
+      <input type="button" value="GET FREE TRIAL" (click)="toggleForm()" style="background-color: #FF6E4E; color:white" class="submit-button">
+    </article>
+
+
+  </form>
+
+</div>
+<div class="container second-container">
+  <p>Our Offer: Intelligent. Real-time insights. Unparalleled results</p>
+</div>
+<div class="third-container">
+  <div class="third-title">
+    <h4>
+      The <span>Benefits</span>
+      of using filed
+    </h4>
+  </div>
+  <div class="container third-content">
+    <div class="third-content-item">
+      <img src="../assets/img/Icon awesome-check.png" alt="">
+      <p>Ability to scale using dexter, our AI powered marketing genius</p>
+    </div>
+    <div class="third-content-item">
+      <img src="../assets/img/Icon awesome-check.png" alt="">
+      <p>Client success manager who will optimize your facebook ad campaigns and focus on driving the best
+        possible results for you</p>
+    </div>
+    <div class="third-content-item">
+      <img src="../assets/img/Icon awesome-check.png" alt="">
+      <p>This is a limited time offer only</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="container fourth-container">
+  <section class="card">
+    <main>
+      <img src="../assets/img/Icon material-format-quote.png" alt="">
+      <p>"It surpassed our expectations"</p>
+    </main>
+    <p>"Filed has completely surpassed our expectations. I will refer everyone I know. Filed is worth much
+      more than I paid."</p>
+    <section class="bottom">
+      <img src="../assets/img/2b65901707e2087367946f7b7772fd8335c6c9e5.jpeg" alt="">
+      <p><span>Tanya Y</span><br> Flexi Content @ Content</p>
+    </section>
+  </section>
+  <section class="card">
+    <main>
+      <img src="../assets/img/Icon material-format-quote.png" alt="">
+      <p>“The essential marketing tool”</p>
+    </main>
+    <p>“Filed is the most valuable business resource we have EVER purchased. I was amazed at the quality of
+      filed. We were treated like royalty.”</p>
+    <section class="bottom">
+      <img src="../assets/img/Lucas-De-Man-Fotograaf-Anne-Harbers-2-1024x683.jpg" alt="">
+      <p><span>Jack Francis</span><br> Manager @ Accidents Direct</p>
+    </section>
+  </section>
+  <section class="card">
+    <main>
+      <img src="../assets/img/Icon material-format-quote.png" alt="">
+      <p>“Your company is truly upstanding”</p>
+    </main>
+    <p>“The service was excellent. After using filed my business skyrocketed! It really saves me time and
+      effort.”</p>
+    <section class="bottom">
+      <img src="../assets/img/Lucas-De-Man-Fotograaf-Anne-Harbers-2-1024x683.jpg" alt="">
+      <p><span>Dawna N.</span><br> Editor @ Museum of Typography</p>
+    </section>
+  </section>
+</div>
+
+<div class="footer">
+  <span>Copyright © 2020. All Rights Reserved.</span>
+  <ul>
+    <li>HOME</li>
+    <li>FEATURES</li>
+    <li>TERMS</li>
+    <li>PRIVACY</li>
+    <li>CONTACT US</li>
+  </ul>
+  <div class="socials">
+    <i class="fab fa-facebook-f"></i>
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-twitter"></i>
+  </div>
+</div>
