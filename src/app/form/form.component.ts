@@ -1,10 +1,12 @@
 import { Router } from '@angular/router';
 import * as userActions from '../form/state/actions';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PaymentServiceService } from '../payment-service.service';
 import { ToastrService } from 'ngx-toastr';
 import { Store } from '@ngrx/store';
+import { User } from '../user.model';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -12,8 +14,9 @@ import { Store } from '@ngrx/store';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnInit, OnDestroy {
   userForm: FormGroup = new FormGroup({});
+ paymentSubscription: Subscription = new Subscription();
 
   constructor(private fb: FormBuilder,
               private payService: PaymentServiceService,
@@ -33,8 +36,8 @@ export class FormComponent implements OnInit {
 
   submit(): void {
 
-    this.payService.makePayment(this.userForm.value).subscribe({
-      next: (data) => {
+    this.paymentSubscription = this.payService.makePayment(this.userForm.value).subscribe({
+      next: (data: User) => {
         console.log(data);
 
         // display a toast message for success
@@ -52,4 +55,9 @@ export class FormComponent implements OnInit {
       }
     });
   }
+
+  ngOnDestroy(): void {
+    this.paymentSubscription.unsubscribe();
+  }
 }
+

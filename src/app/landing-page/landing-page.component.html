@@ -1,8 +1,10 @@
-<div class="navbutton" >
-  <h3 *ngIf="currentUser" style="color: rgb(75, 17, 233); text-align: center;" >First Name: {{currentUser.firstName}}</h3>
-  <h3 *ngIf="currentUser" style="color: rgb(75, 17, 233); text-align: center;" >Last Name:{{currentUser.lastName}}</h3>
-  <h3 *ngIf="currentUser" style="color: rgb(75, 17, 233); text-align: center;" >Email: {{currentUser.email}}</h3>
-  <h3 *ngIf="currentUser" style="color: rgb(75, 17, 233); text-align: center;" >phone Number:{{currentUser.phoneNumber}}</h3>
-  <h3 *ngIf="currentUser" style="color: rgb(75, 17, 233); text-align: center;" >Monthly budget:{{currentUser.monthlyAdvertBudget}}</h3>
-  <button (click)="toNewPage()"  title="click to view reactive form" *ngIf="nextPage" >Reactive form</button>
+<div class="navbutton">
+  <div id="userDetails" *ngIf="currentUser | async as currentUser">
+    <h3 style="color: rgb(75, 17, 233); text-align: center;">First Name: {{currentUser.firstName}}</h3>
+    <h3 style="color: rgb(75, 17, 233); text-align: center;">Last Name:{{currentUser.lastName}}</h3>
+    <h3 style="color: rgb(75, 17, 233); text-align: center;">Email: {{currentUser.email}}</h3>
+    <h3 style="color: rgb(75, 17, 233); text-align: center;">phone Number:{{currentUser.phoneNumber}}</h3>
+    <h3 style="color: rgb(75, 17, 233); text-align: center;">Monthly budget:{{currentUser.monthlyAdvertBudget}}</h3>
+  </div>
+  <button (click)="toNewPage()" title="click to view reactive form" *ngIf="nextPage">Reactive form</button>
 </div>

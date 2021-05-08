@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs/internal/Observable';
 import { getShowProductCode } from '../form/state/user.reducer';
 import { User } from '../user.model';
 
@@ -11,12 +12,9 @@ import { User } from '../user.model';
 })
 export class LandingPageComponent implements OnInit {
   nextPage = true;
-  currentUser!: User;
+  currentUser!: Observable<User>;
   constructor(private router: Router, private store: Store<any>) {
-    this.store.pipe(select(getShowProductCode)).subscribe((user) => {
-      this.currentUser = user;
-      console.log(this.currentUser);
-    });
+    this.currentUser = this.store.pipe(select(getShowProductCode));
    }
 
   ngOnInit(): void {
